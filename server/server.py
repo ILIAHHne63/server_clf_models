@@ -20,7 +20,7 @@ from os import environ as env
 
 MODEL_DIR_LOADED = env['MODEL_DIR_LOADED']
 MODEL_DIR = env['MODEL_DIR']
-AVAILABLE_CORES = multiprocessing.Value('d', int(env['AVAILABLE_CORES']))
+AVAILABLE_CORES = multiprocessing.Value('d', (int(env['AVAILABLE_CORES']) - 1))
 MAX_MODELS = int(env['MAX_MODELS'])
 LOADED_MODELS = {}
 LOCK = multiprocessing.Lock()
